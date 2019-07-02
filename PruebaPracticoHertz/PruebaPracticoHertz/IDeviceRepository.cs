@@ -10,7 +10,7 @@ namespace PruebaPracticoHertz
     {
         void Create(Device device);
 
-        Device GetAll();
+        List<Device> GetAll();
 
         void Update(Device device);
 

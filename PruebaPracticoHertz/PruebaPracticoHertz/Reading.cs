@@ -8,6 +8,6 @@ namespace PruebaPracticoHertz
 {
     class Reading
     {
-        public int Value { get; set; }
+        public uint Value { get; set; }
     }
 }

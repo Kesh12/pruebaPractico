@@ -10,5 +10,10 @@ namespace PruebaPracticoHertz
     class PruebaPracticoContext : DbContext
     {
         public DbSet<Device> Devices { get; set; }
+
+        public PruebaPracticoContext()
+        {
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<PruebaPracticoContext>());
+        }
     }
 }

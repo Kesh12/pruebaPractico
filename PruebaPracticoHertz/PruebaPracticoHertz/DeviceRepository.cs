@@ -17,19 +17,43 @@ namespace PruebaPracticoHertz
             }
         }
 
+        public Device GetById(int id)
+        {
+            using (var db = new PruebaPracticoContext())
+            {
+                return db.Devices.Where(x => x.Id == id).FirstOrDefault();
+            }
+        }
+
         public List<Device> GetAll()
         {
             using (var db = new PruebaPracticoContext())
             {
-
+                return db.Devices.ToList();
             }
-            return new List<Device>();
+        }
+
+        public Device GetDeviceReportedLatest()
+        {
+            using (var db = new PruebaPracticoContext())
+            {
+                return db.Devices
+                    .Where(x => x.Readings.Count > 0)
+                    .OrderBy(x => x.LastTimeReported)
+                    .FirstOrDefault();
+            }
         }
 
         public void Update(Device device)
         {
             using (var db = new PruebaPracticoContext())
             {
+                var savedDevice = db.Devices.Where(x => x.Id == device.Id).FirstOrDefault();
+                if (savedDevice == null)
+                {
+                    return;
+                }
+                db.Entry(savedDevice).CurrentValues.SetValues(savedDevice);
                 db.SaveChanges();
             }
         }

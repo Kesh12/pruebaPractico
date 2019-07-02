@@ -10,6 +10,7 @@ namespace PruebaPracticoHertz
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
