@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Device.cs" />
-    <Compile Include="DeviceRepository.cs" />
+    <Compile Include="DeviceRepositoryImplementation.cs" />
     <Compile Include="IDeviceRepository.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="Program.cs" />

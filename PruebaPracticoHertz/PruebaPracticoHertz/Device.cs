@@ -15,6 +15,7 @@ namespace PruebaPracticoHertz
         public string Name { get; set; }
         public DateTime LastTimeReported { get; set; }
         public List<Reading> Readings { get; set; }
+        [Required]
         public Location Location { get; set; }
     }
 }
